@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Map</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+  <body>
+    <nav class="navbar" >
+      <div class="container-fluid">
+        
+          <div class="navbar-brand">
+            <span class="title">Rourkela eating places</span>
+          </div>
+        
+
+        <form class="navbar-form navbar-right" role="search">
+          <div class="input">
+              <input type="text" class="form-control" placeholder="Search"  data-bind="textInput: items, valueUpdate: 'afterkeydown'">
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <main class="container-fluid">
+      <div class="row">
+        <div id="map"></div>
+
+        <aside class="col-md-3">
+          <div>
+            <div class="listGroup" data-bind="foreach: locationList">
+                <a href="#" class="list-group-item list-group-item-action" data-bind="text: title, click: show"></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+   
+    <!-- Knockout.js -->
+    <script src="js/knockout.min.js"></script>
+    <script src="js/maperror.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/viewmodel.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?libraries=places,drawing,geometry&key=AIzaSyBYz0IXhgTcwPy5VE-H2swd2uWNzr8P4XQ&callback=initialize" onerror="onError()">
+    </script>
+  </body>
+</html>
